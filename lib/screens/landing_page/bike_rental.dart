@@ -1,3 +1,4 @@
+import 'package:bike_rental_app/components/bike_type_selection.dart';
 import "package:flutter/material.dart";
 import 'package:bike_rental_app/components/date_selector.dart';
 
@@ -22,6 +23,7 @@ class BikeRental extends StatelessWidget {
       body: Container(
         margin: const EdgeInsets.only(top: 20.0),
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -29,6 +31,42 @@ class BikeRental extends StatelessWidget {
                 DateSelectorComponent(type: "start"),
                 DateSelectorComponent(type: "end"),
               ],
+            ),
+            SizedBox(height: 20.0,),
+            GridView.count(
+              childAspectRatio: 1.2,
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              mainAxisSpacing: 0,
+              children: <Widget>[
+                // Super Bikes
+                BikeTypeMenuItem(category: "super_bikes"),
+                // Classics
+                BikeTypeMenuItem(category: "classics"),
+                // Casuals
+                BikeTypeMenuItem(category: "casuals"),
+                // City
+                BikeTypeMenuItem(category: "city"),
+              ],
+            ),
+            SizedBox(height: 25),
+            FlatButton(
+              color: Color(0xFFF7F7F7),
+              padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(40.0)
+                )
+              ),
+              onPressed: (){},
+              child: Text(
+                "PROCEED",
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Theme.of(context).accentColor
+
+                ),
+              ),
             )
             
           ],

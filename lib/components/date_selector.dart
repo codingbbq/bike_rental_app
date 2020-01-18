@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:intl/intl.dart';
 
 class DateSelectorComponent extends StatelessWidget {
 
@@ -23,8 +24,8 @@ class DateSelectorComponent extends StatelessWidget {
       final DateTime picked = await showDatePicker(
         context: context,
         initialDate: _date,
-        firstDate: new DateTime(2019),
-        lastDate: new DateTime(2020)
+        firstDate: new DateTime(_date.year, _date.month, _date.day),
+        lastDate: new DateTime(2022)
       );
 
       if(picked != null && picked != _date){
@@ -51,6 +52,7 @@ class DateSelectorComponent extends StatelessWidget {
     }
 
     return Container(
+      width: MediaQuery.of(context).size.width * 0.40,
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
         color: Color(0xFFf7f7f7),
@@ -69,11 +71,11 @@ class DateSelectorComponent extends StatelessWidget {
           SizedBox(height: 10.0,),
           GestureDetector(
             onTap: (){
-              // _selectDateAndTime(context);
+              _selectDateAndTime(context);
             },
             child: Text(
               //'${_date.toString()} ${_time.toString()}',
-              "21 Apr, 4.00 PM",
+              '${DateFormat.MMMd().format(_date)}, ${_time.hour.toString()}',
               style: TextStyle(
                 color: Theme.of(context).accentColor,
                 fontSize: 18.0
