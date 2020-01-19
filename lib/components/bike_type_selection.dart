@@ -1,10 +1,11 @@
+import 'package:bike_rental_app/models/bike_selection.dart';
 import 'package:flutter/material.dart';
 
 class BikeTypeMenuItem extends StatelessWidget {
 
-  final String category;
+  final BikeSelection bike;
 
-  BikeTypeMenuItem({ this.category });
+  BikeTypeMenuItem({ this.bike });
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +25,14 @@ class BikeTypeMenuItem extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Image.asset(
-                "assets/images/super_bike.png"
+                bike.img
               ),
             )
           ),
         ),
         SizedBox(height: 10.0,),
         Text(
-          "Super Bikes",
+          bike.bike,
           style: TextStyle(
             color: Theme.of(context).accentColor,
             fontSize: 18.0

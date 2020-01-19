@@ -41,7 +41,7 @@ class DateSelectorComponent extends StatelessWidget {
       );
 
       if(timePicked != null && timePicked != _time) {
-        print('Time selected: ${_time.toString()}');
+        _time = _time.replacing(hour: _time.hourOfPeriod);
       }
     }
 
@@ -75,10 +75,11 @@ class DateSelectorComponent extends StatelessWidget {
             },
             child: Text(
               //'${_date.toString()} ${_time.toString()}',
-              '${DateFormat.MMMd().format(_date)}, ${_time.hour.toString()}',
+              // '${DateFormat.MMMd().format(_date)}, ${_time.toString()} ${_time.period}',
+              "21 Apr, 4:00 PM",
               style: TextStyle(
                 color: Theme.of(context).accentColor,
-                fontSize: 18.0
+                fontSize: 16.0
               ),
             ),
           )

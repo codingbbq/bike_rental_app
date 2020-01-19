@@ -1,4 +1,5 @@
 import 'package:bike_rental_app/components/bike_type_selection.dart';
+import 'package:bike_rental_app/models/bike_selection.dart';
 import "package:flutter/material.dart";
 import 'package:bike_rental_app/components/date_selector.dart';
 
@@ -38,16 +39,7 @@ class BikeRental extends StatelessWidget {
               shrinkWrap: true,
               crossAxisCount: 2,
               mainAxisSpacing: 0,
-              children: <Widget>[
-                // Super Bikes
-                BikeTypeMenuItem(category: "super_bikes"),
-                // Classics
-                BikeTypeMenuItem(category: "classics"),
-                // Casuals
-                BikeTypeMenuItem(category: "casuals"),
-                // City
-                BikeTypeMenuItem(category: "city"),
-              ],
+              children: bikes.map((b) => BikeTypeMenuItem(bike: b)).toList()
             ),
             SizedBox(height: 25),
             FlatButton(
