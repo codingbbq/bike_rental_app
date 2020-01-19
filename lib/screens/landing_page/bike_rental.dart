@@ -50,7 +50,9 @@ class BikeRental extends StatelessWidget {
                   Radius.circular(40.0)
                 )
               ),
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context, '/searchbikelist');
+              },
               child: Text(
                 "PROCEED",
                 style: TextStyle(

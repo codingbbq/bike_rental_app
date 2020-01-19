@@ -1,11 +1,17 @@
 import 'package:bike_rental_app/models/bike_selection.dart';
 import 'package:flutter/material.dart';
 
-class BikeTypeMenuItem extends StatelessWidget {
+class BikeTypeMenuItem extends StatefulWidget {
 
   final BikeSelection bike;
 
   BikeTypeMenuItem({ this.bike });
+
+  @override
+  _BikeTypeMenuItemState createState() => _BikeTypeMenuItemState();
+}
+
+class _BikeTypeMenuItemState extends State<BikeTypeMenuItem> {
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,9 @@ class BikeTypeMenuItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         InkWell(
-          onTap: () {},
+          onTap: () {
+            
+          },
           child: Container(
             width: 120,
             height: 120,
@@ -25,14 +33,14 @@ class BikeTypeMenuItem extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Image.asset(
-                bike.img
+                widget.bike.img
               ),
             )
           ),
         ),
         SizedBox(height: 10.0,),
         Text(
-          bike.bike,
+          widget.bike.bike,
           style: TextStyle(
             color: Theme.of(context).accentColor,
             fontSize: 18.0
