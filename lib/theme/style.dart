@@ -8,6 +8,5 @@ ThemeData appTheme() {
     dividerColor: Colors.white,
     buttonColor: Color(0xFF2980b9),
     scaffoldBackgroundColor: Colors.white,
-    canvasColor: Colors.black,
   );
 }
