@@ -131,16 +131,22 @@ class Bike extends StatelessWidget {
         ),
       ),
 
-      floatingActionButton: new FloatingActionButton(
-        elevation: 0.0,
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.70,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
+      floatingActionButton: Container(
+        width: MediaQuery.of(context).size.width * 0.70,
+        decoration: BoxDecoration(
+          borderRadius:  BorderRadius.circular(20.0),
+        ),
+        child: FloatingActionButton.extended(
+          backgroundColor: Color(0xFF2980b9),
+          onPressed: (){},
+          elevation: 0,
+          label: Text(
+            "BOOK NOW",
+            style: TextStyle(
+              fontSize: 18.0
+            ),
           ),
         ),
-        backgroundColor: new Color(0xFFE57373),
-        onPressed: (){}
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
