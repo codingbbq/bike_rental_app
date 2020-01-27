@@ -1,4 +1,5 @@
 import 'package:bike_rental_app/models/search_bikes.dart';
+import 'package:bike_rental_app/screens/bike_page/bike_carousal.dart';
 import 'package:flutter/material.dart';
 
 class Bike extends StatelessWidget {
@@ -22,21 +23,8 @@ class Bike extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: <Widget>[
-              Center(
-                child: Container(
-                  margin: const EdgeInsets.symmetric(vertical: 20),
-                  width: 250,
-                  height: 250,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFE7E7E7),
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage(bike.images[0]),
-                      fit: BoxFit.cover
-                    )
-                  ),
-                ),
-              ),
+              
+              BikeCarousal(images : bike.images),
 
               SizedBox(height: 20.0),
 
