@@ -24,7 +24,10 @@ class Bike extends StatelessWidget {
           child: Column(
             children: <Widget>[
               
-              BikeCarousal(images : bike.images),
+              SizedBox(
+                height: 300,
+                child: BikeCarousal(images : bike.images)
+              ),
 
               SizedBox(height: 20.0),
 
